@@ -1,7 +1,7 @@
-<?php namespace Atomino\Molecules\EntityPlugin\Created;
+<?php namespace Atomino\Carbon\Plugins\Created;
 
-use Atomino\Entity\Attributes\EventHandler;
-use Atomino\Entity\Entity;
+use Atomino\Carbon\Attributes\EventHandler;
+use Atomino\Carbon\Entity;
 
 trait CreatedTrait{
 	#[EventHandler(Entity::EVENT_BEFORE_INSERT)]

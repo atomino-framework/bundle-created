@@ -1,7 +1,7 @@
-<?php namespace Atomino\Molecules\EntityPlugin\Created;
+<?php namespace Atomino\Carbon\Plugins\Created;
 
-use Atomino\Entity\Generator\CodeWriter;
-use Atomino\Entity\Plugin\Plugin;
+use Atomino\Carbon\Generator\CodeWriter;
+use Atomino\Carbon\Plugin\Plugin;
 
 #[\Attribute(\Attribute::TARGET_CLASS)]
 class Created extends Plugin{
@@ -9,7 +9,7 @@ class Created extends Plugin{
 	public function generate(\ReflectionClass $ENTITY, CodeWriter $codeWriter){
 		$codeWriter->addAttribute('#[Immutable("'.$this->field.'", true)]');
 		$codeWriter->addAttribute('#[Protect("'.$this->field.'", true, false)]');
-		$codeWriter->addAttribute('#[RequiredField("'.$this->field.'", \Atomino\Entity\Field\DateTimeField::class)]');
+		$codeWriter->addAttribute('#[RequiredField("'.$this->field.'", \Atomino\Carbon\Field\DateTimeField::class)]');
 	}
 	public function getTrait():string|null{ return CreatedTrait::class;}
 }
